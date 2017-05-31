@@ -15,6 +15,10 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/static/index.html')
 })
 
+app.get('/gui', function (req, res) {
+  res.sendFile(__dirname + '/static/receiver.html')
+})
+
 app.use('/', express.static(__dirname + '/static'))
 
 http.listen(PORT, function () {
