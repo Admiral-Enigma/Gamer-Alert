@@ -5,6 +5,12 @@ var io = require('socket.io')(http)
 
 const PORT = Number(process.env.PORT || 3000)
 
+io.on('connection', function (socket) {
+    socket.on('yo', function () {
+      console.log('User connected!!!!');
+    })
+})
+
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/static/index.html')
 })
@@ -12,5 +18,5 @@ app.get('/', function (req, res) {
 app.use('/', express.static(__dirname + '/static'))
 
 http.listen(PORT, function () {
-  console.log('Server running on port 2000');
+  console.log('Server running on port '+PORT);
 })
