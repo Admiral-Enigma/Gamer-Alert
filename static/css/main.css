@@ -1,0 +1,15 @@
+.doorbellbutton {
+  margin-left: 10px !important;
+  margin-bottom: 10px !important;
+  width: 150px !important;
+  height: 150px !important;
+}
+
+.btnTable {
+  margin: auto;
+}
+
+.title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
