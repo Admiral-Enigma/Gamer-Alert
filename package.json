@@ -1,0 +1,23 @@
+{
+  "name": "gamer-alert",
+  "version": "1.0.0",
+  "description": "Gamer \"doorbell\" for your parents or friends so the don't seak up on you",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DemSquirrel/Gamer-Alert.git"
+  },
+  "author": "Lord Squirrel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DemSquirrel/Gamer-Alert/issues"
+  },
+  "homepage": "https://github.com/DemSquirrel/Gamer-Alert#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "socket.io": "^2.0.1"
+  }
+}
