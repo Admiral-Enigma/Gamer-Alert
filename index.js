@@ -9,33 +9,39 @@ var loadout = {
   title: "Alexander's Dørklokke",
   buttons: [
     {
+      id: Math.floor(Math.random() * 999) + 100,
       name: "Der er mad!",
       color: "success",
       signal: "foodButtonSignal"
     },
     {
-      name: "Banke på!",
-      color: "success",
+      id: Math.floor(Math.random() * 999) + 100,
+      name: "Banke Banke på!",
+      color: "danger",
       signal: "knockknockButtonSignal"
     },
     {
+      id: Math.floor(Math.random() * 999) + 100,
       name: "Test1",
-      color: "success",
+      color: "primary",
       signal: "test1ButtonSignal"
     },
     {
+      id: Math.floor(Math.random() * 999) + 100,
       name: "Test2",
-      color: "success",
+      color: "warning",
       signal: "test2ButtonSignal"
     },
     {
+      id: Math.floor(Math.random() * 999) + 100,
       name: "Test3",
-      color: "success",
+      color: "danger",
       signal: "test3ButtonSignal"
     },
     {
+      id: Math.floor(Math.random() * 999) + 100,
       name: "Test4",
-      color: "success",
+      color: "royal",
       signal: "test4ButtonSignal"
     }
   ]
@@ -45,6 +51,10 @@ io.on('connection', function (socket) {
     socket.on('yo', function () {
       console.log('User connected!!!!');
       io.emit('loadout', loadout)
+    })
+
+    socket.on('signal', function (signal) {
+      console.log('Got signal '+ signal);
     })
 })
 
