@@ -5,9 +5,46 @@ var io = require('socket.io')(http)
 
 const PORT = Number(process.env.PORT || 3000)
 
+var loadout = {
+  title: "Alexander's Dørklokke ⎝⩺ ͟ل͜⩹⎠",
+  buttons: [
+    {
+      name: "Der er mad!",
+      color: "success",
+      signal: "foodButtonSignal"
+    },
+    {
+      name: "Banke på!",
+      color: "success",
+      signal: "knockknockButtonSignal"
+    },
+    {
+      name: "Test1",
+      color: "success",
+      signal: "test1ButtonSignal"
+    },
+    {
+      name: "Test2",
+      color: "success",
+      signal: "test2ButtonSignal"
+    },
+    {
+      name: "Test3",
+      color: "success",
+      signal: "test3ButtonSignal"
+    },
+    {
+      name: "Test4",
+      color: "success",
+      signal: "test4ButtonSignal"
+    }
+  ]
+}
+
 io.on('connection', function (socket) {
     socket.on('yo', function () {
       console.log('User connected!!!!');
+      io.emit('loadout', loadout)
     })
 })
 
