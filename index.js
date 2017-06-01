@@ -6,7 +6,7 @@ var io = require('socket.io')(http)
 const PORT = Number(process.env.PORT || 3000)
 
 var loadout = {
-  title: "Alexander's Dørklokke ⎝⩺ ͟ل͜⩹⎠",
+  title: "Alexander's Dørklokke",
   buttons: [
     {
       name: "Der er mad!",
