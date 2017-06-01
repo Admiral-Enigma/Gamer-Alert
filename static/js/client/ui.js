@@ -1,8 +1,15 @@
 var ui = {
   buttonClicked: false,
+  loadSounds: function () {
+      createjs.Sound.registerSound('../../sounds/client/signalsendsound.wav', 'signalSend')
+      createjs.Sound.registerSound('../../sounds/client/timernotdonesound.wav', 'timerNotDone')
+
+  },
+
   handleClick: function (signal) {
     if (!this.buttonClicked) {
       net.sendSignal(signal)
+      createjs.Sound.play('signalSend')
       this.buttonClicked = true
       console.log('Started Timer');
 
@@ -10,13 +17,14 @@ var ui = {
 
         ui.buttonClicked = false;
         console.log('Ended Timer');
-      }, 3000);
+      }, 10000);
 
     }else if (this.buttonClicked) {
       console.log(this.buttonClicked);
+      createjs.Sound.play('timerNotDone')
       swal(
         'Hov Hov...',
-        'Vent lige 20 sekunder med at ringe på igen!',
+        'Vent lige 10 sekunder med at ringe på igen!',
         'error'
       );
     }

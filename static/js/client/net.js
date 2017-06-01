@@ -13,6 +13,6 @@ window.onload = function () {
       ui.constructUiFromLoadout(loadout)
     }
     gotLoadout = true
-
   })
+  ui.loadSounds()
 }
