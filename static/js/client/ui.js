@@ -8,10 +8,10 @@ var ui = {
 
       setTimeout(function () {
 
-        this.buttonClicked = false;
+        ui.buttonClicked = false;
         console.log('Ended Timer');
       }, 3000);
-      
+
     }else if (this.buttonClicked) {
       console.log(this.buttonClicked);
       swal(
@@ -40,6 +40,6 @@ var ui = {
       $('#' + button.id).click(function () {
         ui.handleClick(button.signal)
       })
-    })
+    });
   }
 }
