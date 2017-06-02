@@ -55,6 +55,7 @@ io.on('connection', function (socket) {
 
     socket.on('signal', function (signal) {
       console.log('Got signal '+ signal);
+      io.emit('newSignal', signal)
     })
 })
 
