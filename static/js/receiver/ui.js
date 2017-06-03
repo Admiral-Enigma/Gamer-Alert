@@ -1,26 +1,46 @@
-document.addEventListener('DOMContentLoaded', function () {
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-})
-function notifyMe() {
-  if (!Notification) {
-    alert('Desktop notifications not available in your browser. Try Chromium.');
-    return;
-  }
 
-  if (Notification.permission !== "granted")
-    Notification.requestPermission();
-  else {
-    var notification = new Notification('DER ER MAD!!!', {
-      icon: 'https://yt3.ggpht.com/-nnJWEdGL7nY/AAAAAAAAAAI/AAAAAAAAAAA/8MRA-w92Gyo/s900-c-k-no-mo-rj-c0xffffff/photo.jpg',
-      body: "Der er mad Alexander!!!",
-    });
+var ui = {
+  actionLoadOut: null,
 
-    notification.onclick = function () {
-      window.open("http://stackoverflow.com/a/13328397/1269037");
-    };
+  init: function () {
+    if (Notification.permission !== "granted")
+      Notification.requestPermission();
+    //Load sounds
+    createjs.Sound.registerSound('../../sounds/receiver/doorKnock.mp3', 'knockKnockSound')
+    createjs.Sound.registerSound('../../sounds/receiver/number9.mp3', 'foodSound')
 
+    createjs.Sound.registerSound('../../sounds/receiver/test1.mp3', 'test1Sound')
+    createjs.Sound.registerSound('../../sounds/receiver/test2.mp3', 'test2Sound')
+
+  },
+
+  setUpActions: function (actions) {
+    this.actionLoadOut = actions;
+  },
+
+  handleSignal: function (signal) {
+    this.actionLoadOut.actions.forEach(function (action) {
+      if (action.signal == signal) {
+        ui.notify(action.title, action.icon, action.body, action.sound)
+      }
+    })
+  },
+
+  notify: function (title, icon, body, sound) {
+    if (!Notification) {
+      alert('Desktop notifications not available in your browser. Try Chromium.');
+      return;
+    }
+
+    if (Notification.permission !== "granted")
+      Notification.requestPermission();
+    else {
+      var notification = new Notification(title, {
+        icon: icon,
+        body: body,
+      });
+      createjs.Sound.stop();
+      createjs.Sound.play(sound)
+    }
   }
 }
-
-notifyMe()

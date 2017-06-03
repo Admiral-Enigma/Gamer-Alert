@@ -47,9 +47,44 @@ var loadout = {
   ]
 }
 
+var receiverActions = {
+  actions: [
+    {
+      signal: 'foodButtonSignal',
+      title: 'FOOOOOOOD',
+      icon: '',
+      body: 'Der er mad Alexander',
+      sound: 'foodSound'
+    },
+    {
+      signal: 'knockknockButtonSignal',
+      title: 'Banke Banke på!',
+      icon: 'http://i4.mirror.co.uk/incoming/article6251909.ece/ALTERNATES/s615/Man-knocking-on-door.jpg',
+      body: 'Der er mad Alexander',
+      sound: 'knockKnockSound'
+    },
+    {
+      signal: 'test1ButtonSignal',
+      title: 'TEST 1',
+      icon: 'https://static.comicvine.com/uploads/original/11/119238/5230235-ricksanchez.jpg',
+      body: 'Der er mad Alexander',
+      sound: 'test1Sound'
+    },
+    {
+      signal: 'test2ButtonSignal',
+      title: 'TEST 2',
+      icon: 'https://vignette4.wikia.nocookie.net/rickandmorty/images/e/ef/Vlcsnap-2015-01-31-02h46m26s111.png/revision/latest?cb=20150131104650',
+      body: 'Der er mad Alexander',
+      sound: 'test2Sound'
+    }
+  ]
+}
+
 io.on('connection', function (socket) {
+    io.emit('receiverActions', receiverActions)
+
     socket.on('yo', function () {
-      console.log('User connected!!!!');
+      console.log('User connected!!!!')
       io.emit('loadout', loadout)
     })
 
