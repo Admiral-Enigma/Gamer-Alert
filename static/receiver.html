@@ -5,11 +5,17 @@
     <title>Receiver side</title>
     <script src="./js/socket.io.js" charset="utf-8"></script>
     <script src="https://code.createjs.com/soundjs-0.6.2.min.js" charset="utf-8"></script>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="./css/bttn.min.css">
+    <link rel="stylesheet" href="./css/receiver.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
   <body>
     <script src="./js/receiver/ui.js" charset="utf-8"></script>
     <script src="./js/receiver/net.js" charset="utf-8"></script>
-
+    <div style="text-align: center;">
+      <button class="bttn-simple bttn-lg bttn-danger muteButton">MUTE</button>
+      <h2 class="mutedStatusText"></h2>
+    </div>
   </body>
 </html>

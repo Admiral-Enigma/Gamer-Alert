@@ -1,7 +1,7 @@
 
 var ui = {
   actionLoadOut: null,
-
+  muted: false,
   init: function () {
     if (Notification.permission !== "granted")
       Notification.requestPermission();
@@ -11,7 +11,18 @@ var ui = {
 
     createjs.Sound.registerSound('../../sounds/receiver/doorbell.mp3', 'doorBellSound')
     createjs.Sound.registerSound('../../sounds/receiver/lion.mp3', 'catSound')
+    $('.mutedStatusText').html('You are not muted')
 
+    $('.muteButton').click(function () {
+      if (ui.muted) {
+        ui.muted = false
+        $('.mutedStatusText').html('You are not muted')
+      }else {
+        ui.muted = true
+        createjs.Sound.stop();
+        $('.mutedStatusText').html('You are muted')
+      }
+    })
   },
 
   setUpActions: function (actions) {
@@ -34,13 +45,15 @@ var ui = {
 
     if (Notification.permission !== "granted")
       Notification.requestPermission();
-    else {
-      var notification = new Notification(title, {
-        icon: icon,
-        body: body,
-      });
-      createjs.Sound.stop();
-      createjs.Sound.play(sound)
+    else{
+      if (this.muted != true){
+        var notification = new Notification(title, {
+          icon: icon,
+          body: body,
+        });
+        createjs.Sound.stop();
+        createjs.Sound.play(sound)
+      }
     }
   }
 }

@@ -1,0 +1,9 @@
+.muteButton {
+  margin-top: 200px;
+  width: 400px !important;
+  height: 150px !important;
+}
+
+* {
+  font-family: 'Lato', sans-serif;
+}
