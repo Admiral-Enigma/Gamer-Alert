@@ -9,8 +9,8 @@ var ui = {
     createjs.Sound.registerSound('../../sounds/receiver/doorKnock.mp3', 'knockKnockSound')
     createjs.Sound.registerSound('../../sounds/receiver/number9.mp3', 'foodSound')
 
-    createjs.Sound.registerSound('../../sounds/receiver/test1.mp3', 'test1Sound')
-    createjs.Sound.registerSound('../../sounds/receiver/test2.mp3', 'test2Sound')
+    createjs.Sound.registerSound('../../sounds/receiver/doorbell.mp3', 'doorBellSound')
+    createjs.Sound.registerSound('../../sounds/receiver/lion.mp3', 'catSound')
 
   },
 
