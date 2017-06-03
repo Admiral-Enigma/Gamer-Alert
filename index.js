@@ -22,27 +22,15 @@ var loadout = {
     },
     {
       id: Math.floor(Math.random() * 999) + 100,
-      name: "Test1",
+      name: "Der er gæster!",
       color: "primary",
-      signal: "test1ButtonSignal"
+      signal: "guestButtonSignal"
     },
     {
       id: Math.floor(Math.random() * 999) + 100,
-      name: "Test2",
+      name: "Simba vil gerne ind",
       color: "warning",
-      signal: "test2ButtonSignal"
-    },
-    {
-      id: Math.floor(Math.random() * 999) + 100,
-      name: "Test3",
-      color: "danger",
-      signal: "test3ButtonSignal"
-    },
-    {
-      id: Math.floor(Math.random() * 999) + 100,
-      name: "Test4",
-      color: "royal",
-      signal: "test4ButtonSignal"
+      signal: "catButtonSignal"
     }
   ]
 }
@@ -51,8 +39,8 @@ var receiverActions = {
   actions: [
     {
       signal: 'foodButtonSignal',
-      title: 'FOOOOOOOD',
-      icon: '',
+      title: 'Der er mad!!!',
+      icon: 'http://www.tastyburger.com/wp-content/themes/tastyBurger/images/home/img-large-burger.jpg',
       body: 'Der er mad Alexander',
       sound: 'foodSound'
     },
@@ -60,22 +48,22 @@ var receiverActions = {
       signal: 'knockknockButtonSignal',
       title: 'Banke Banke på!',
       icon: 'http://i4.mirror.co.uk/incoming/article6251909.ece/ALTERNATES/s615/Man-knocking-on-door.jpg',
-      body: 'Der er mad Alexander',
+      body: 'Der er nogen der banker!!',
       sound: 'knockKnockSound'
     },
     {
-      signal: 'test1ButtonSignal',
-      title: 'TEST 1',
-      icon: 'https://static.comicvine.com/uploads/original/11/119238/5230235-ricksanchez.jpg',
-      body: 'Der er mad Alexander',
-      sound: 'test1Sound'
+      signal: 'guestButtonSignal',
+      title: 'Gæster!',
+      icon: 'https://s3.amazonaws.com/crowdcontent/crowdblog/guest-tag.jpg',
+      body: 'Gæsterne er her Alexander!',
+      sound: 'doorBellSound'
     },
     {
-      signal: 'test2ButtonSignal',
-      title: 'TEST 2',
-      icon: 'https://vignette4.wikia.nocookie.net/rickandmorty/images/e/ef/Vlcsnap-2015-01-31-02h46m26s111.png/revision/latest?cb=20150131104650',
-      body: 'Der er mad Alexander',
-      sound: 'test2Sound'
+      signal: 'catButtonSignal',
+      title: 'Simba',
+      icon: 'https://vignette1.wikia.nocookie.net/gleethenextgenerationfanfiction/images/5/56/Puss-in-Boots-Big-Eyes.jpg/revision/latest?cb=20120317000707',
+      body: 'Simba vil gerne ind!',
+      sound: 'catSound'
     }
   ]
 }
