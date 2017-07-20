@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DemSquirrel/Gamer-Alert.git"
+    "url": "git+https://github.com/OxCart/Gamer-Alert.git"
   },
-  "author": "Lord Squirrel",
+  "author": "OxCart",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DemSquirrel/Gamer-Alert/issues"
+    "url": "https://github.com/OxCart/Gamer-Alert/issues"
   },
-  "homepage": "https://github.com/DemSquirrel/Gamer-Alert#readme",
+  "homepage": "https://github.com/OxCart/Gamer-Alert#readme",
   "dependencies": {
     "express": "^4.15.3",
     "opn": "^5.0.0",
